@@ -43,7 +43,7 @@ def HtmltoCsv(i, Year):
     
     while ReadFiles < (i):
 
-        doc = open("Vertretungsplan" + str(ReadFiles) + ".html", "r").read()
+        doc = open("Vertretungsplan" + str(ReadFiles) + ".html", "r", 1, "latin1").read()
         soup = bs(doc, "html.parser")
 
         DateHtml = soup.find_all("div")
