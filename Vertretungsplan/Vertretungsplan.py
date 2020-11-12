@@ -319,13 +319,13 @@ def searchVertretungen(Schoolclass, FormDate, path):
 
 def writeInHtml(Schoolclass, FormDate, Weekday, path):
 
-    csvfile = open(path + Schoolclass + "/" + "Vertetungen_Heute.csv", "r")
+    csvfile = open(path + Schoolclass + "/" + "Vertetungen_Heute.csv", "r", 1, "latin1")
     todayReader = csv.reader(csvfile, delimiter = ";")
 
     writetabelle = False
 
-    with open(path + Schoolclass + "/" + "index.html", "w") as htmlF:
-        with open("Vertretungvorlage.html", "r") as htmlVorlage:
+    with open(path + Schoolclass + "/" + "index.html", "w", 1, "latin1") as htmlF:
+        with open("Vertretungvorlage.html", "r", 1, "latin1") as htmlVorlage:
                 todayReader = csv.reader(csvfile, delimiter = ";")
                 lineNum = 0
                 for line in htmlVorlage:
