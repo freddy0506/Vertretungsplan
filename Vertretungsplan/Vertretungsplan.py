@@ -298,6 +298,11 @@ def searchVertretungen(Schoolclass, FormDate, path):
 
     for row in reader:
         if len(row) > 0:
+            item = 0
+            while item < len(row):
+                if row[item] == "\xa0":
+                    row[item] = ""
+                item += 1
             if Schoolclass != "EF" and Schoolclass != "Q1" and Schoolclass != "Q2":
                 isyear = row[1].find(Schoolclass[0:2])
                 isclass = row[1].find(Schoolclass[2])
